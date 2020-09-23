@@ -11,9 +11,14 @@ wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
 bash Anaconda3-2020.02-Linux-x86_64.sh
 
 # Install Django
-pip install django=3.0.4
+pip install django==3.0.4
 
 ```
+### Clone this project
+```sh
+git clone git@github.com:ting830812/django-template.git
+```
+
 ### Put your own code in `main.py`
 
 `project/app/main.py`
