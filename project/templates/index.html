@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include "header.html" %}
+    </head>
+    <body>
+
+        <div class="container h-100">
+            <div class="row h-100 justify-content-center align-items-center">
+    
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h1>LOGO</h1>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-lg-8 offset-lg-2">
+                            <form action="{% url 'service' %}" method="post" enctype="multipart/form-data">
+                                <div class="input-group search-bar-form">
+                                    {% csrf_token %}
+                                    <label class="btn btn-secondary search-bar-form rounded-0">
+                                        Browse&hellip; <input id="uploaded-file" class="d-none" type="file" name="file">
+                                    </label>
+                                    <input id="uploaded-file-path" type="text" class="form-control" name="file_name" placeholder="choose a file" readonly>
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-info rounded-0" type="submit">Upload</button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <a>&nbsp;</a>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
