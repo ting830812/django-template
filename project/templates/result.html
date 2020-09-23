@@ -4,7 +4,6 @@
         {% include "header.html" %}
     </head>
     <body>
-
         <div class="container h-100">
             <div class="row h-100 justify-content-center align-items-center">
     
@@ -17,9 +16,20 @@
                     <div class="row mt-3">
                         <div class="col-lg-8 offset-lg-2">
                             {% if status == 'under_processing' %}
-                                <div>under processing</div>
+                            <div>
+                                <p> Your query has been received and is under processing. </p>
+                                <p> The results will be shown on the same page after the computation is done. </p>
+                                <p> This page will refresh every 60 seconds. </p>
+                                <script type="text/javascript">
+                                    setTimeout(function() {
+                                        location.reload(true);
+                                    }, 60000);
+                                </script>
+                            </div>
                             {% else %}
-                                <div>finish processing</div>
+                                <div>
+                                    <p>Your query has been finished. </p>
+                                </div>
                                 <div>
                                     <a href="{% url 'download' %}?file_id={{ file_id }}">{{ file_name }} result</a>
                                 </div>
